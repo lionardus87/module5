@@ -7,6 +7,8 @@ const testRoutes = require("./routes/myTestRoutes");
 const calculatorRoutes = require("./routes/calculatorRoutes");
 const extraRoutes = require("./routes/extraRoutes");
 
+const storeRoutes = require("./routes/storeRoutes");
+
 //Lab exercise 8
 const swaggerUi = require("swagger-ui-express");
 swaggerDocument = require("./swagger.json");
@@ -38,3 +40,6 @@ app.use("/calculator", calculatorRoutes);
 
 //Labexercise 3
 app.use("./extra", extraRoutes);
+
+//eCommerce Store
+app.get("/products", storeRoutes);

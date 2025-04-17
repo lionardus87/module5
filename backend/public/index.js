@@ -7,10 +7,8 @@ categoryIcons["jewelery"] = '<i class="fas fa-gem"></i>';
 
 async function fetchProduct() {
 	try {
-		const response = await fetch("https://fakestoreapi.com/products");
-		const json = await response.json();
-		newProducts = json;
-		console.log(json);
+		const response = await axios.get("http://localhost:3001/products");
+		newProducts = response.data;
 		console.log(newProducts);
 		filterCategory();
 		displayProduct(newProducts);
@@ -100,5 +98,6 @@ function sortProduct() {
 
 	displayProduct(sortedProducts);
 }
-
-fetchProduct();
+window.onload = () => {
+	fetchProduct();
+};
