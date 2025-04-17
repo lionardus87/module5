@@ -1,37 +1,29 @@
-body {
+.product-card {
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
+	flex-wrap: wrap;
 }
-
-.calculator {
+.card {
+	width: 20em;
+	height: 40em;
 	border-radius: 10px;
-	padding: 20px;
-	box-shadow: 6px 4px 10px;
-	text-align: center;
-}
-input {
-	display: block;
+	padding: 5px;
 	margin: 5px;
-	width: 200px;
-	height: 30px;
-	font-size: medium;
-	text-align: center;
+}
+.card-body {
+	overflow: scroll;
 }
 
-.operators button {
-	background-color: grey;
-	color: white;
-	width: 30px;
-	height: 30px;
-	margin: 3px;
+.card-body p {
+	display: inline;
 }
 
-.reset button {
-	background-color: orange;
-	color: antiquewhite;
-	width: 40px;
-	height: 40px;
-	margin: 3px;
+.item-image {
+	height: 18em;
+	align-items: center;
+	justify-content: center;
+}
+.card img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
 }
