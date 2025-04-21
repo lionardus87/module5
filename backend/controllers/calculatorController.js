@@ -3,45 +3,23 @@ const Calculator = require("../libraries/calculator");
 let myCalc = new Calculator();
 
 // Lab exercise 5
-const addNumbers = (req, res) => {
-	let number1 = parseInt(req.query.num1);
-	let number2 = parseInt(req.query.num2);
-	let sum = myCalc.add(number1, number2);
-	console.log(sum);
-	res.status(200);
-	res.json({ result: sum });
+const addNumbers = (num1, num2) => {
+	return myCalc.add(num1, num2);
 };
 
-const minusNumbers = (req, res) => {
-	let number1 = parseInt(req.query.num1);
-	let number2 = parseInt(req.query.num2);
-	let minus = myCalc.minus(number1, number2);
-	console.log(minus);
-	res.status(200);
-	res.json({ result: minus });
+const minusNumbers = (num1, num2) => {
+	return myCalc.minus(num1, num2);
 };
 
-const multiplyNumbers = (req, res) => {
-	let number1 = parseInt(req.query.num1);
-	let number2 = parseInt(req.query.num2);
-	let multiply = myCalc.multiply(number1, number2);
-	console.log(multiply);
-	res.status(200);
-	res.json({ result: multiply });
+const multiplyNumbers = (num1, num2) => {
+	return myCalc.multiply(num1, num2);
 };
 
-const divideNumbers = (req, res) => {
-	let number1 = parseInt(req.query.num1);
-	let number2 = parseInt(req.query.num2);
-	if (number2 == 0) {
-		console.log(`Divide: Division by zero error!`);
-		res.status(400).json({ error: "Cannot divide by zero!" });
-	} else {
-		let divide = myCalc.divide(number1, number2);
-		console.log(divide);
-		res.status(200);
-		res.json({ result: divide });
+const divideNumbers = (num1, num2) => {
+	if (num2 === 0) {
+		throw new Error("Cannot divide by zero!");
 	}
+	return myCalc.divide(num1, num2);
 };
 
 //Lab exercise 7
